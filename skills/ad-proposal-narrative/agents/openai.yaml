@@ -1,0 +1,6 @@
+interface:
+  display_name: "提案结构叙事"
+  short_description: "把策略创意整理成客户可理解 PPT 逻辑"
+  default_prompt: "Use $ad-proposal-narrative to structure these insights into a client-ready deck outline."
+policy:
+  allow_implicit_invocation: true

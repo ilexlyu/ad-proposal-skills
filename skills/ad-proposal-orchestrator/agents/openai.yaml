@@ -1,0 +1,6 @@
+interface:
+  display_name: "广告提案总控"
+  short_description: "拆解 brief 并调度广告提案全流程"
+  default_prompt: "Use $ad-proposal-orchestrator to turn this client brief into a proposal work plan."
+policy:
+  allow_implicit_invocation: true

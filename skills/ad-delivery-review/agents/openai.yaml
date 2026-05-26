@@ -1,0 +1,6 @@
+interface:
+  display_name: "提案质检复盘"
+  short_description: "检查提案风险并沉淀复盘资产"
+  default_prompt: "Use $ad-delivery-review to QA this proposal and extract reusable learnings."
+policy:
+  allow_implicit_invocation: true

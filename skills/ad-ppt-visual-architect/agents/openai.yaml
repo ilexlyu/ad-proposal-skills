@@ -1,0 +1,6 @@
+interface:
+  display_name: "PPT视觉架构"
+  short_description: "生成 PPT 视觉系统和设计交接稿"
+  default_prompt: "Use $ad-ppt-visual-architect to create a visual system and page blueprint for this proposal."
+policy:
+  allow_implicit_invocation: true

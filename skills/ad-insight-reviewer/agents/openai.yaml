@@ -1,0 +1,6 @@
+interface:
+  display_name: "洞察生成评审"
+  short_description: "从资料提炼并评分策略洞察"
+  default_prompt: "Use $ad-insight-reviewer to turn these facts into judged strategic insights."
+policy:
+  allow_implicit_invocation: true

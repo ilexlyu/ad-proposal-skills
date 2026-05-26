@@ -1,0 +1,6 @@
+interface:
+  display_name: "行业资料搜集"
+  short_description: "收集研报、平台数据和竞品资料"
+  default_prompt: "Use $ad-research-collector to research this industry and build a cited material table."
+policy:
+  allow_implicit_invocation: true

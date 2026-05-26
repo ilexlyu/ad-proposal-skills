@@ -1,0 +1,6 @@
+interface:
+  display_name: "创意方法发散"
+  short_description: "用创意方法论发散传播方向"
+  default_prompt: "Use $ad-creative-methods to generate creative directions from this strategic insight."
+policy:
+  allow_implicit_invocation: true
