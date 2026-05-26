@@ -2,6 +2,8 @@
 
 一套面向广告新人、策略/创意/内容团队的 Agent Skills。
 
+中文使用说明页：[广告提案 Agent Skills：从模糊 Brief 到完整提案工作流](https://my.feishu.cn/docx/Q95Sdsj30oEwLOxxpMDci6mKnHd)
+
 它不是一个“帮我生成 PPT”的 prompt，而是一套从模糊 brief 到完整提案工作流的可复用方法：
 
 ```text

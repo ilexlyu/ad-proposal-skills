@@ -6,7 +6,9 @@
 
 这是一套面向广告新人、策略/创意/内容团队的 Agent Skills。它解决的不是“更快生成 PPT”，而是把一个模糊 brief 拆成可判断、可表达、可交付的提案流程。
 
-GitHub：待发布后填入仓库链接。
+GitHub：https://github.com/ilexlyu/ad-proposal-skills
+
+飞书：https://my.feishu.cn/docx/Q95Sdsj30oEwLOxxpMDci6mKnHd
 
 ## 总流程
 
