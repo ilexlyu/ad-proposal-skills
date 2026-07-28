@@ -1,6 +1,8 @@
 # 示例：乐事暑期模糊 Brief
 
-这是一个用于测试 `ad-proposal-skills` 的模拟 brief。它故意保持模糊，接近客户真实沟通里常见的状态。
+[English](lays-summer-brief.en.md)
+
+这是一个用于测试 `ad-proposal-skills` 的虚构 Brief。它故意保留信息缺口，接近真实提案启动阶段常见的状态。
 
 ## Client Brief
 
@@ -53,3 +55,5 @@
 平台分工：
 小红书种草场景，抖音放大动作，线下承接购买。
 ```
+
+该案例仅用于展示工作流产出，不代表乐事官方项目或品牌授权合作。

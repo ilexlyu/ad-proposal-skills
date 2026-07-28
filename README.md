@@ -1,100 +1,126 @@
 # Ad Proposal Skills
 
-一套面向广告新人、策略/创意/内容团队的 Agent Skills。
+**A modular Agent Skill system for strategy, creative, content, and brand teams — from an ambiguous brief to a client-ready advertising proposal.**
 
-中文使用说明页：[广告提案 Agent Skills：从模糊 Brief 到完整提案工作流](https://my.feishu.cn/docx/Q95Sdsj30oEwLOxxpMDci6mKnHd)
+[简体中文](README.zh-CN.md) · [Workflow](docs/workflow.en.md) · [Example brief](examples/lays-summer-brief.en.md) · [中文使用说明](https://my.feishu.cn/docx/Q95Sdsj30oEwLOxxpMDci6mKnHd)
 
-它不是一个“帮我生成 PPT”的 prompt，而是一套从模糊 brief 到完整提案工作流的可复用方法：
+Ad Proposal Skills turns the reasoning behind strong advertising proposals into seven composable skills. It is not a one-shot “generate a PPT” prompt. It provides a traceable workflow for framing the brief, building an evidence base, developing strategic insight, translating strategy into creative territories, structuring the pitch, directing the visual system, and reviewing the final delivery.
 
 ```text
-Brief -> 资料 -> 洞察 -> 创意解释 -> 提案结构 -> 视觉架构 -> 交付复盘
+Brief → Evidence → Insight → Creative Logic → Narrative → Visual System → Review
 ```
 
-## 解决什么问题
+## Why it exists
 
-广告提案最难的地方，往往不是写 PPT，而是面对一个模糊 brief 时不知道从哪里开始。
+Most proposal failures begin before the deck is designed: the brief is under-defined, research is copied without judgment, insights merely restate facts, and creative ideas are disconnected from the business case.
 
-这套 Skills 试图把广告人的隐性经验显性化：
+This repository gives teams a shared operating system that helps them:
 
-- 先拆 brief，而不是直接打开 PPT。
-- 先找可信资料，而不是复制一堆截图。
-- 把事实改写成有判断的洞察。
-- 用华与华、奥美/Deck of Brilliance、麦肯锡、群玉山等方法解释策略。
-- 把策略和创意整理成客户听得懂的 PPT 逻辑。
-- 把“年轻化、高级、夏日感”翻译成可执行视觉规则。
-- 交付后复盘，把经验沉淀成下一次可复用资产。
+- turn incomplete client input into explicit assumptions, open questions, and a work plan;
+- build a source-linked evidence base instead of an untraceable research dump;
+- convert facts into debatable, actionable strategic points of view;
+- explain creative direction through established strategic lenses rather than generic brainstorming;
+- construct a persuasion chain that clients can understand and approve;
+- translate subjective visual language into executable page and design rules;
+- review risk, source quality, client fit, and reusable learning before and after delivery.
 
-## Skills
+## The seven-skill system
 
-| Skill | 作用 |
-|---|---|
-| `ad-proposal-orchestrator` | 提案总控：拆 brief、识别缺失信息、规划后续 Skill 调用顺序 |
-| `ad-research-collector` | 行业资料搜集：规定资料源、可信度、输出资料表 |
-| `ad-insight-reviewer` | 洞察生成与评审：把事实变成有立场的策略判断 |
-| `ad-creative-methods` | 创意方法论：用机构方法论解释策略，而不是泛泛发散点子 |
-| `ad-proposal-narrative` | 提案结构叙事：把策略和创意变成客户可理解的 PPT 逻辑 |
-| `ad-ppt-visual-architect` | PPT 视觉架构：生成视觉系统、页面规则和设计交接稿 |
-| `ad-delivery-review` | 交付质检与复盘：检查风险，并沉淀可复用资产 |
+| Skill | Responsibility | Primary output |
+|---|---|---|
+| [`ad-proposal-orchestrator`](skills/ad-proposal-orchestrator/SKILL.md) | Frame the assignment and coordinate the workflow | Brief diagnosis, assumptions, skill sequence, deliverables |
+| [`ad-research-collector`](skills/ad-research-collector/SKILL.md) | Build a credible and traceable evidence base | Cited research table with confidence and limitations |
+| [`ad-insight-reviewer`](skills/ad-insight-reviewer/SKILL.md) | Generate and challenge strategic insights | Scored insight set, Top 3 recommendations, counterarguments |
+| [`ad-creative-methods`](skills/ad-creative-methods/SKILL.md) | Translate strategy into persuasive creative territories | Method-led creative directions with rationale and risk |
+| [`ad-proposal-narrative`](skills/ad-proposal-narrative/SKILL.md) | Turn strategy and creative into a client-ready story | Deck architecture, slide blueprint, executive summary |
+| [`ad-ppt-visual-architect`](skills/ad-ppt-visual-architect/SKILL.md) | Define a visual system that serves the argument | Page rules, visual blueprint, design handoff |
+| [`ad-delivery-review`](skills/ad-delivery-review/SKILL.md) | QA the proposal and capture reusable learning | Revision list, delivery risks, retrospective assets |
 
-## 安装
+Each skill can run independently. For an end-to-end assignment, start with the orchestrator and call the specialist skills only when their inputs are ready.
 
-把 `skills/ad-*` 复制到你的 Codex Skills 目录：
+## Install
+
+Clone the repository and copy the skills into your Codex Skills directory:
 
 ```bash
-cp -R skills/ad-* ~/.codex/skills/
+git clone https://github.com/ilexlyu/ad-proposal-skills.git
+cp -R ad-proposal-skills/skills/ad-* ~/.codex/skills/
 ```
 
-重新打开 Codex / Agent 后，即可通过 `$ad-proposal-orchestrator` 或其他 Skill 名称调用。
+Restart Codex, then invoke the orchestrator or any specialist skill by name.
 
-## 快速示例
-
-可以先用一个模糊 brief 测试总控：
+## Quick start
 
 ```text
 Use $ad-proposal-orchestrator
 
-我们是乐事薯片，今年暑期想做一波年轻人向的传播。
-夏天大家出去玩、宅家追剧、朋友聚会都挺多的，我们希望乐事能更有存在感。
-不想只是做促销，也不想太硬广，最好能有一点社交传播性。
-预算还没完全定，线上为主，可能会结合小红书、抖音和一些线下场景。
-你们先帮我们想想方向。
+We are planning a summer campaign for Lay's aimed at younger consumers.
+We want the brand to play a more visible role across travel, streaming,
+friend gatherings, and other summer occasions. The campaign should feel
+social rather than promotional. Budget is still open; digital is the priority,
+with possible Xiaohongshu, Douyin, and offline extensions.
+Help us define the strategic direction.
 ```
 
-总控会把 brief 拆成项目判断、缺失信息、后续 Skill 调用顺序和交付物清单。
+The orchestrator does not jump straight to campaign slogans. It first returns the assignment type, known inputs, critical gaps, working assumptions, recommended skill sequence, and delivery plan.
 
-完整示例见 [`examples/lays-summer-brief.md`](examples/lays-summer-brief.md)。
+See the complete [Lay's summer brief example](examples/lays-summer-brief.en.md).
 
-## 示例成果
+## What a complete run can produce
 
-用这套流程跑完乐事暑期 brief 后，可以产出：
+- **Evidence base:** category, consumer occasion, channel, competitor, and brand-asset research with source links.
+- **Strategic insight:** a defensible interpretation such as “young consumers do not need another snack; they need an effortless social cue that starts the moment.”
+- **Creative logic:** multiple ways to express the strategy, selected through fit, memorability, credibility, and execution risk.
+- **Proposal narrative:** a slide-by-slide persuasion chain from business context to recommended action.
+- **Visual system:** an executable design direction built around the sound of the crunch and the action of opening the pack.
+- **Delivery review:** source, logic, page clarity, stakeholder fit, and risk checks, followed by reusable project learning.
 
-- 资料表：行业、场景、渠道、竞品和品牌资产。
-- 洞察：例如“年轻人不是缺零食，而是缺一个能自然开局的社交道具”。
-- 创意解释：华与华找符号，奥美戏剧化问题，麦肯锡讲客户逻辑，群玉山补公共叙事。
-- PPT 主线：让乐事成为年轻人的夏日开局道具。
-- 视觉方向：用“咔嚓声波”和“开袋动作”串联追剧、露营、朋友局、夜宵。
+## Example output
 
-部分生成示例图在 [`assets/lays-demo`](assets/lays-demo)。
+<p align="center">
+  <img src="assets/lays-demo/乐事营销demo1.png" width="49%" alt="Lay's proposal cover: 咔嚓一下，开局了">
+  <img src="assets/lays-demo/乐事营销demo4.png" width="49%" alt="Lay's strategic insight slide">
+</p>
+<p align="center">
+  <img src="assets/lays-demo/乐事营销demo5.png" width="49%" alt="Lay's core strategy and creative platform">
+  <img src="assets/lays-demo/乐事营销demo7.png" width="49%" alt="Lay's content and channel strategy">
+</p>
 
-## 适合谁
+The example demonstrates workflow output, not an official campaign or brand endorsement.
 
-- 广告公司新人、策略、创意、文案。
-- 内容团队、品牌市场部、电商运营团队。
-- 想把自己的提案方法沉淀成 Agent Skill 的个人创作者。
-- 想训练团队提案 SOP 的中小公司。
+## Designed for
 
-## 版本
+- agency strategy, planning, creative, copy, and account teams;
+- in-house content, social, brand marketing, and ecommerce teams;
+- independent strategists and creative consultants;
+- teams turning proposal craft into a repeatable Agent workflow.
 
-当前版本：`v0.1.0`
+## Operating principles
 
-这是第一版可用结构。后续可以继续补：
+1. **Evidence before assertion.** Material claims need a source, date, confidence level, and limitation.
+2. **Judgment before ideation.** Creative exploration begins only after the strategic choice is explicit.
+3. **One argument per slide.** A deck is a persuasion system, not a storage format.
+4. **Execution over adjectives.** “Premium” and “youthful” must become concrete visual rules.
+5. **Risk before delivery.** Challenge weak evidence, unsupported leaps, and stakeholder objections early.
+6. **Learning after delivery.** Convert project-specific experience into reusable methods and references.
 
-- 更多行业案例。
-- 安装脚本。
-- 视频教程。
-- 飞书/Notion 使用说明页。
-- 更多机构方法论 reference。
+## Repository structure
+
+```text
+skills/      Seven installable Agent Skills and reference libraries
+docs/        Workflow documentation
+examples/    Example briefs and expected skill flow
+assets/      Demonstration proposal visuals
+```
+
+The skills use the `SKILL.md` convention and include Codex interface metadata under `agents/openai.yaml`.
+
+## Status
+
+Current release: `v0.1.0`
+
+The system is usable today and intentionally compact. Contributions that improve source quality, industry-specific references, evaluation criteria, or field-tested examples are welcome.
 
 ## License
 
-MIT
+[MIT](LICENSE)
