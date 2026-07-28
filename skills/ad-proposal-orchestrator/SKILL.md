@@ -1,6 +1,6 @@
 ---
 name: ad-proposal-orchestrator
-description: "广告新人提案总控 Skill。Use when the user gives an advertising, marketing, branding, ecommerce, social campaign, launch, or client brief and wants to start a proposal, pitch deck, PPT outline, campaign plan, or AI/Agent Skill workflow. Use to clarify the brief, identify missing inputs, split work into research, insight, creative, narrative, visual, and delivery-review steps, and recommend which ad-proposal Skills to call next."
+description: "面向策略、创意、内容与品牌团队的广告提案总控 Skill。Use when the user gives an advertising, marketing, branding, ecommerce, social campaign, launch, or client brief and wants to start a proposal, pitch deck, PPT outline, campaign plan, or AI/Agent Skill workflow. Use to clarify the brief, identify missing inputs, split work into research, insight, creative, narrative, visual, and delivery-review steps, and recommend which ad-proposal Skills to call next."
 ---
 
 # 广告提案总控
@@ -58,4 +58,4 @@ description: "广告新人提案总控 Skill。Use when the user gives an advert
 
 - 必须先解释“为什么按这个顺序做”。
 - 不要把 brief 直接改写成 PPT 大纲，除非资料、洞察和创意已经充分。
-- 对新人要解释每一步的作用：资料负责事实，洞察负责判断，创意负责可能性，结构负责说服，视觉负责表达，质检负责风险和沉淀。
+- 明确每一步的专业职责：资料建立事实基础，洞察形成策略判断，创意负责策略转译，结构建立说服链，视觉提升理解效率，质检控制风险并沉淀资产。
