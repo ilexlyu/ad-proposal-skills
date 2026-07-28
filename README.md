@@ -28,7 +28,7 @@ This repository gives teams a shared operating system that helps them:
 
 | Skill | Responsibility | Primary output |
 |---|---|---|
-| [`ad-proposal-orchestrator`](skills/ad-proposal-orchestrator/SKILL.md) | Frame the assignment and coordinate the workflow | Brief diagnosis, assumptions, skill sequence, deliverables |
+| [`ad-proposal-orchestrator`](skills/ad-proposal-orchestrator/SKILL.md) | Dynamically route, execute, and validate the workflow | Project state, task graph, stage gates, validated deliverables |
 | [`ad-research-collector`](skills/ad-research-collector/SKILL.md) | Build a credible and traceable evidence base | Cited research table with confidence and limitations |
 | [`ad-insight-reviewer`](skills/ad-insight-reviewer/SKILL.md) | Generate and challenge strategic insights | Scored insight set, Top 3 recommendations, counterarguments |
 | [`ad-creative-methods`](skills/ad-creative-methods/SKILL.md) | Translate strategy into persuasive creative territories | Method-led creative directions with rationale and risk |
@@ -36,7 +36,7 @@ This repository gives teams a shared operating system that helps them:
 | [`ad-ppt-visual-architect`](skills/ad-ppt-visual-architect/SKILL.md) | Define a visual system that serves the argument | Page rules, visual blueprint, design handoff |
 | [`ad-delivery-review`](skills/ad-delivery-review/SKILL.md) | QA the proposal and capture reusable learning | Revision list, delivery risks, retrospective assets |
 
-Each skill can run independently. For an end-to-end assignment, start with the orchestrator and call the specialist skills only when their inputs are ready.
+Each skill can run independently. For an end-to-end assignment, start with the orchestrator: it resumes from the earliest unmet quality gate, runs independent research or creative lanes in parallel when available, and falls back to sequential execution when needed.
 
 ## Install
 
@@ -62,7 +62,7 @@ with possible Xiaohongshu, Douyin, and offline extensions.
 Help us define the strategic direction.
 ```
 
-The orchestrator does not jump straight to campaign slogans. It first returns the assignment type, known inputs, critical gaps, working assumptions, recommended skill sequence, and delivery plan.
+The orchestrator does not stop at a recommended skill sequence. It maintains evidence and assumptions, executes the available stages, validates each handoff, and continues to the requested deliverable unless a material blocker requires a decision.
 
 See the complete [Lay's summer brief example](examples/lays-summer-brief.en.md).
 

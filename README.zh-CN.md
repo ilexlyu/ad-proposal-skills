@@ -28,7 +28,7 @@ Brief → 证据 → 洞察 → 创意逻辑 → 提案叙事 → 视觉系统 �
 
 | Skill | 职责 | 核心交付物 |
 |---|---|---|
-| [`ad-proposal-orchestrator`](skills/ad-proposal-orchestrator/SKILL.md) | 定义任务并调度完整流程 | Brief 诊断、假设、Skill 顺序、交付计划 |
+| [`ad-proposal-orchestrator`](skills/ad-proposal-orchestrator/SKILL.md) | 动态路由、执行并验收完整流程 | 项目状态、任务图、质量门、已验证交付物 |
 | [`ad-research-collector`](skills/ad-research-collector/SKILL.md) | 建立可信、可追溯的证据基础 | 带来源、可信度与局限的资料表 |
 | [`ad-insight-reviewer`](skills/ad-insight-reviewer/SKILL.md) | 生成并挑战策略洞察 | 候选洞察评分、Top 3、反证与行动影响 |
 | [`ad-creative-methods`](skills/ad-creative-methods/SKILL.md) | 把策略转译为有说服力的创意方向 | 带方法依据、成立理由与风险的创意路径 |
@@ -36,7 +36,7 @@ Brief → 证据 → 洞察 → 创意逻辑 → 提案叙事 → 视觉系统 �
 | [`ad-ppt-visual-architect`](skills/ad-ppt-visual-architect/SKILL.md) | 建立服务于论证的视觉系统 | 页面规则、视觉蓝图、设计交接稿 |
 | [`ad-delivery-review`](skills/ad-delivery-review/SKILL.md) | 质检提案并沉淀项目经验 | 修改清单、交付风险、复盘资产 |
 
-每个 Skill 都可以独立调用。完整项目建议从总控开始，并在专项 Skill 的输入已经充分时再进入下一环节。
+每个 Skill 都可以独立调用。完整项目从总控开始：它会从最早未通过的质量门继续，在能力允许时并行执行互不依赖的研究或创意任务，并在需要时自动退化为顺序执行。
 
 ## 安装
 
@@ -61,7 +61,7 @@ Use $ad-proposal-orchestrator
 请先帮我们定义策略方向。
 ```
 
-总控不会立刻输出口号，而是先返回项目类型、已知输入、关键缺口、暂定假设、建议调用顺序和交付计划。
+总控不会停在建议调用顺序。它会维护证据与假设、执行当前可用阶段、验收每次交接，并持续推进到用户要求的交付物；只有真正影响方向的阻塞项才会请求决定。
 
 完整演示见[乐事暑期 Brief 示例](examples/lays-summer-brief.md)。
 
